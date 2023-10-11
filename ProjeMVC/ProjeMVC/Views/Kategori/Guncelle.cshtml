@@ -1,0 +1,15 @@
+﻿@model ProjeMVC.Models.Entity.TblKategoriler
+
+@{
+    ViewBag.Title = "Guncelle";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Kategoriler", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(m=>m.KategoriID)
+        @Html.TextBoxFor(m=>m.KategoriID)
+    </div>
+}
+

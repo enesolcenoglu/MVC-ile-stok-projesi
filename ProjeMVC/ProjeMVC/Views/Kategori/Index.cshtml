@@ -1,0 +1,27 @@
+﻿@using ProjeMVC.Models.Entity
+@model List<TblKategoriler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th class="bg-info">Kategori ID</th>
+        <th class="bg-info">Kategori Adı</th>
+        <th class="bg-info">Sil</th>
+        <th class="bg-info">Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach (var ktgr in Model)
+        {
+            <tr>
+                <td>@ktgr.KategoriID</td>
+                <td>@ktgr.KategoriAd</td>
+                <td><a href="/Kategori/Sil/@ktgr.KategoriID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Kategori/Guncelle/@ktgr.KategoriID" class="btn btn-success">Güncelle</a></td>             
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Kategori/YeniKategori/" class="btn btn-primary">Yeni Kategori Ekle</a>

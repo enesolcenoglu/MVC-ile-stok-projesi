@@ -1,0 +1,32 @@
+﻿@model ProjeMVC.Models.Entity.TblUrunler
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Ürün Model</label>
+        @Html.DropDownListFor(m => m.TblKategoriler.KategoriID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Ürün Ad</label>
+        <input type="text" class="form-control" name="UrunAd" />
+    </div>
+    <br />
+    <div>
+        <label>Ürün Fiyat</label>
+        <input type="text" class="form-control" name="Fiyat" />
+    </div>
+    <br />
+    <div>
+        <label>Ürün Stok</label>
+        <input type="text" class="form-control" name="Stok" />
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-info">Ürün Ekle</button>
+    </div>
+</form>
+

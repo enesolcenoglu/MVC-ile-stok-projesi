@@ -1,0 +1,28 @@
+﻿@using ProjeMVC.Models.Entity
+@model List<TblMusteriler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table table-bordered">
+    <tr>
+        <th class="bg-info">Müşteri ID</th>
+        <th class="bg-info">Müşteri Ad</th>
+        <th class="bg-info">Müşteri Soyad</th>
+    </tr>
+    <tbody> 
+        @foreach (var musteri in Model)
+        {
+        <tr>
+            <td>@musteri.MusteriId</td>
+            <td>@musteri.MusteriAd</td>
+            <td>@musteri.MusteriSoyad</td>
+            <td><a href="/Musteriler/Sil/@musteri.MusteriId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Musteriler/Güncelle/@musteri.MusteriId" class="btn btn-success">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/Musteriler/YeniMusteri/" class="btn btn-primary">Yeni Müşteri Ekle</a>
+
